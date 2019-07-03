@@ -1,1 +1,740 @@
-[]
+[
+    {
+        "id": "a31bc839.23dc38",
+        "type": "tab",
+        "label": "Telegram Playground",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8670e631.7ce828",
+        "type": "chatbot-slack-node",
+        "z": "",
+        "botname": "Guidone_bot",
+        "usernames": "",
+        "store": "99497719.973138",
+        "log": "",
+        "debug": false
+    },
+    {
+        "id": "93a1a6b9.44c718",
+        "type": "chatbot-facebook-node",
+        "z": "",
+        "botname": "Dacebook DEV",
+        "usernames": "",
+        "store": "99497719.973138",
+        "log": "",
+        "debug": false
+    },
+    {
+        "id": "99497719.973138",
+        "type": "chatbot-context-store",
+        "z": "",
+        "name": "memory",
+        "contextStorage": "memory",
+        "contextParams": ""
+    },
+    {
+        "id": "ece4ecb.f25621",
+        "type": "chatbot-telegram-node",
+        "z": "",
+        "botname": "Guidone TEST",
+        "usernames": "",
+        "providerToken": "",
+        "polling": "1000",
+        "store": "99497719.973138",
+        "log": "",
+        "parseMode": "",
+        "debug": false
+    },
+    {
+        "id": "f7359f0c.015da",
+        "type": "chatbot-dialogflow-token",
+        "z": "",
+        "name": "Test"
+    },
+    {
+        "id": "4bed83d0.7927bc",
+        "type": "chatbot-telegram-node",
+        "z": "",
+        "botname": "Test con WebHook",
+        "usernames": "",
+        "providerToken": "",
+        "polling": "1000",
+        "store": "99497719.973138",
+        "log": "",
+        "parseMode": "",
+        "debug": true,
+        "webHook": "https://a95e0193.ngrok.io/redbot/telegram"
+    },
+    {
+        "id": "df322afe.643568",
+        "type": "chatbot-context-store",
+        "z": "",
+        "name": "Plain file /web",
+        "contextStorage": "plain-file",
+        "contextParams": "{\"path\": \"/web/chat-contexts\"}"
+    },
+    {
+        "id": "e6958fd9.1420c",
+        "type": "chatbot-message",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "message": [
+            {
+                "message": "test version 1"
+            },
+            {
+                "message": "test version 2"
+            },
+            {
+                "message": "test version 3"
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "f3179519.a38c78",
+        "type": "chatbot-image",
+        "z": "a31bc839.23dc38",
+        "name": "test image",
+        "filename": "",
+        "image": "/web/cacca.png",
+        "caption": "Test image",
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "5c2ea493.fd3aac",
+        "type": "chatbot-document",
+        "z": "a31bc839.23dc38",
+        "name": "test file",
+        "filename": "/web/cacca.png.zip",
+        "caption": "Test file",
+        "x": 460,
+        "y": 360,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "986ad46f.0ef9f8",
+        "type": "chatbot-debug",
+        "z": "a31bc839.23dc38",
+        "x": 450,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "7436f69f.dc68b8",
+        "type": "chatbot-inline-buttons",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Postback 1",
+                "value": "postback 1",
+                "answer": "",
+                "alert": false,
+                "style": "default"
+            },
+            {
+                "type": "postback",
+                "label": "Postaback 2",
+                "value": "postback 2",
+                "answer": "Yes!",
+                "alert": false,
+                "style": "primary"
+            },
+            {
+                "type": "postback",
+                "label": "Postback 3",
+                "value": "postback 3",
+                "answer": "Yes!",
+                "alert": false,
+                "style": "danger"
+            },
+            {
+                "type": "dialog",
+                "label": "Open dialog",
+                "value": "dialog1",
+                "answer": "Opened!",
+                "alert": false,
+                "style": ""
+            }
+        ],
+        "message": "",
+        "x": 460,
+        "y": 440,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "16a9b583.c0069a",
+        "type": "chatbot-location",
+        "z": "a31bc839.23dc38",
+        "name": "Loc",
+        "latitude": "43",
+        "longitude": "21",
+        "place": "Bologna",
+        "x": 418,
+        "y": 507,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "180006f6.26e939",
+        "type": "chatbot-audio",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "filename": "/web/cacca.mp3",
+        "track": false,
+        "x": 449,
+        "y": 568,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "9331113b.9e192",
+        "type": "chatbot-generic-template",
+        "z": "a31bc839.23dc38",
+        "name": "Template 1",
+        "title": "Title",
+        "subtitle": "Si come no",
+        "imageUrl": "",
+        "sharable": true,
+        "aspectRatio": "horizontal",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Test 1",
+                "value": "test 1",
+                "answer": "",
+                "alert": false,
+                "style": ""
+            },
+            {
+                "type": "postback",
+                "label": "Test 2",
+                "value": "test 2",
+                "answer": "",
+                "alert": false,
+                "style": "danger"
+            }
+        ],
+        "x": 450,
+        "y": 640,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "32b8bd73.e12542",
+        "type": "chatbot-generic-template",
+        "z": "a31bc839.23dc38",
+        "name": "Template 2",
+        "title": "Title",
+        "subtitle": "Si come no 2",
+        "imageUrl": "",
+        "sharable": true,
+        "aspectRatio": "horizontal",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Test 1",
+                "value": "test 1",
+                "answer": "",
+                "alert": false,
+                "style": ""
+            },
+            {
+                "type": "postback",
+                "label": "Test 2",
+                "value": "test 2",
+                "answer": "",
+                "alert": false,
+                "style": "danger"
+            }
+        ],
+        "x": 450,
+        "y": 720,
+        "wires": [
+            [
+                "3763c12e.9d178e"
+            ]
+        ]
+    },
+    {
+        "id": "3763c12e.9d178e",
+        "type": "chatbot-generic-template",
+        "z": "a31bc839.23dc38",
+        "name": "Template 3",
+        "title": "Title",
+        "subtitle": "Si come no 3",
+        "imageUrl": "",
+        "sharable": true,
+        "aspectRatio": "horizontal",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Test 4",
+                "value": "test 4",
+                "answer": "",
+                "alert": false,
+                "style": ""
+            },
+            {
+                "type": "postback",
+                "label": "Test 2",
+                "value": "test 5",
+                "answer": "",
+                "alert": false,
+                "style": "danger"
+            }
+        ],
+        "x": 630,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c3b18a4.393f68",
+        "type": "chatbot-conversation",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "chatId": "D870ESPT4",
+        "transport": "telegram",
+        "store": "",
+        "x": 430,
+        "y": 1160,
+        "wires": [
+            [
+                "11e7136.26eb1ed"
+            ]
+        ]
+    },
+    {
+        "id": "11e7136.26eb1ed",
+        "type": "chatbot-message",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "message": [
+            {
+                "message": "I am a conversation"
+            }
+        ],
+        "answer": false,
+        "x": 570,
+        "y": 1160,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "ec724982.c1fab8",
+        "type": "inject",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 260,
+        "y": 1160,
+        "wires": [
+            [
+                "2c3b18a4.393f68"
+            ]
+        ]
+    },
+    {
+        "id": "1a7e3bef.0a6d64",
+        "type": "chatbot-dialog",
+        "z": "a31bc839.23dc38",
+        "submitLabel": "Manna",
+        "title": "I am a dialog",
+        "elements": [
+            {
+                "type": "text",
+                "label": "Label 1",
+                "name": "name1",
+                "value": "",
+                "placeholder": "Enter value 1",
+                "hint": "Dai!",
+                "optional": false
+            },
+            {
+                "type": "textarea",
+                "label": "Text area 1",
+                "name": "text2",
+                "value": "",
+                "placeholder": "Enter a long text",
+                "hint": "Long text",
+                "optional": false
+            },
+            {
+                "type": "select",
+                "label": "Select one",
+                "name": "select1",
+                "options": [
+                    {
+                        "value": "one",
+                        "label": "One"
+                    },
+                    {
+                        "value": "two",
+                        "label": "Two"
+                    },
+                    {
+                        "value": "three",
+                        "label": "Three"
+                    }
+                ]
+            }
+        ],
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "d5905647.632df8",
+        "type": "chatbot-rules",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "rules": [
+            {
+                "type": "messageType",
+                "messageType": "dialog"
+            },
+            {
+                "type": "catchAll"
+            }
+        ],
+        "outputs": 2,
+        "x": 170,
+        "y": 360,
+        "wires": [
+            [
+                "1a7e3bef.0a6d64"
+            ],
+            [
+                "7436f69f.dc68b8"
+            ]
+        ]
+    },
+    {
+        "id": "4d7e28a9.199c38",
+        "type": "chatbot-qrcode",
+        "z": "a31bc839.23dc38",
+        "message": "Allora barabba????",
+        "x": 447,
+        "y": 811,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "bb0cc2c3.1a30e",
+        "type": "function",
+        "z": "a31bc839.23dc38",
+        "name": "From docs",
+        "func": "msg.payload = {\n  sharable: true,\n  aspectRatio: 'horizontal',\n  elements: [\n    {\n      title: 'my title',\n      subtitle: 'I am a sub title',\n      imageUrl: 'https://placeimg.com/640/480/any',\n      buttons: [\n        {\n          type: 'url',\n          url: 'http://javascript-jedi.com',\n          label: 'Javascript Jedi'\n        }\n      ]\n    },\n    {\n      title: 'another title',\n      subtitle: 'Second sub title',\n      imageUrl: 'https://placeimg.com/640/480/any',\n      buttons: [\n        {\n          type: 'url',\n          url: 'http://javascript-jedi.com',\n          label: 'Javascript Jedi'\n        }\n      ]\n    }\n  ]      \n}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 880,
+        "wires": [
+            [
+                "3295858a.9b945a"
+            ]
+        ]
+    },
+    {
+        "id": "3295858a.9b945a",
+        "type": "chatbot-generic-template",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "title": "",
+        "subtitle": "",
+        "imageUrl": "",
+        "sharable": true,
+        "aspectRatio": "horizontal",
+        "buttons": [],
+        "x": 670,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60abdbd3.0504d4",
+        "type": "chatbot-list-template",
+        "z": "a31bc839.23dc38",
+        "name": "List Template 1",
+        "title": "JJ",
+        "subtitle": "Allora barabba",
+        "imageUrl": "https://placeimg.com/640/480/any",
+        "sharable": true,
+        "topElementStyle": "large",
+        "buttons": [
+            {
+                "type": "postback",
+                "label": "Yesy",
+                "value": "/yes",
+                "alert": false
+            }
+        ],
+        "x": 460,
+        "y": 960,
+        "wires": [
+            [
+                "80cb97a6.6af658"
+            ]
+        ]
+    },
+    {
+        "id": "80cb97a6.6af658",
+        "type": "chatbot-list-template",
+        "z": "a31bc839.23dc38",
+        "name": "List Template 2",
+        "title": "AAA",
+        "subtitle": "Quindi",
+        "imageUrl": "https://placeimg.com/641/480/any",
+        "sharable": true,
+        "topElementStyle": "large",
+        "buttons": [
+            {
+                "type": "url",
+                "label": "Open",
+                "url": "http://javascript-jedi.com",
+                "webViewHeightRatio": "tall",
+                "extensions": false,
+                "alert": false
+            }
+        ],
+        "x": 840,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d94e8f2b.650f9",
+        "type": "chatbot-telegram-receive",
+        "z": "a31bc839.23dc38",
+        "bot": "ece4ecb.f25621",
+        "botProduction": "",
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "c9240759.c22908"
+            ]
+        ]
+    },
+    {
+        "id": "7250c3b5.eb127c",
+        "type": "chatbot-telegram-send",
+        "z": "a31bc839.23dc38",
+        "bot": "ece4ecb.f25621",
+        "botProduction": "",
+        "track": false,
+        "passThrough": false,
+        "outputs": 0,
+        "x": 1150,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "df43628.c1c3ca",
+        "type": "chatbot-message",
+        "z": "a31bc839.23dc38",
+        "name": "First",
+        "message": [
+            {
+                "message": "test version 1"
+            },
+            {
+                "message": "test version 2"
+            },
+            {
+                "message": "test version 3"
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "51110d73.2d7ef4"
+            ]
+        ]
+    },
+    {
+        "id": "51110d73.2d7ef4",
+        "type": "chatbot-message",
+        "z": "a31bc839.23dc38",
+        "name": "Second",
+        "message": [
+            {
+                "message": "test 3"
+            },
+            {
+                "message": "test 4"
+            },
+            {
+                "message": "test 5"
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "ed19a8b2.d2d3f8",
+        "type": "chatbot-dialogflow",
+        "z": "a31bc839.23dc38",
+        "dialogflow": "f7359f0c.015da",
+        "language": "en",
+        "debug": false,
+        "variable": "topic",
+        "x": 460,
+        "y": 1060,
+        "wires": [
+            [
+                "6b229756.7f7c08"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6b229756.7f7c08",
+        "type": "chatbot-context",
+        "z": "a31bc839.23dc38",
+        "command": "intent",
+        "fieldValue": "",
+        "fieldType": "str",
+        "fieldName": "",
+        "x": 660,
+        "y": 1060,
+        "wires": [
+            [
+                "759b4e8c.05938"
+            ]
+        ]
+    },
+    {
+        "id": "759b4e8c.05938",
+        "type": "chatbot-rules",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "rules": [],
+        "outputs": 1,
+        "x": 830,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c9240759.c22908",
+        "type": "chatbot-rivescript",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "script": "! version = 2.0\n\n+ hello bot\n- Hello, human!\n\n+ my name is *\n- <set name=<formal>>I will remember to call you <get name>.\n\n+ (what is|do you know) my name\n* <get name> != undefined => Yes, your name is <get name>!\n- I don't know your name.",
+        "scriptFile": "",
+        "debug": true,
+        "x": 430,
+        "y": 1240,
+        "wires": [
+            [
+                "f507d84e.97e228"
+            ],
+            [
+                "20c42d91.c81ad2"
+            ]
+        ]
+    },
+    {
+        "id": "f507d84e.97e228",
+        "type": "chatbot-message",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "message": [],
+        "answer": false,
+        "silent": false,
+        "x": 610,
+        "y": 1240,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "20c42d91.c81ad2",
+        "type": "chatbot-message",
+        "z": "a31bc839.23dc38",
+        "name": "Don't understand",
+        "message": [
+            {
+                "message": "Didn't understand"
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 650,
+        "y": 1280,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    }
+]
