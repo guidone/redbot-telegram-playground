@@ -7,6 +7,13 @@
         "info": ""
     },
     {
+        "id": "bc313bf0.98c698",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "8670e631.7ce828",
         "type": "chatbot-slack-node",
         "z": "",
@@ -45,7 +52,9 @@
         "store": "99497719.973138",
         "log": "",
         "parseMode": "",
-        "debug": false
+        "debug": false,
+        "webHook": "",
+        "connectMode": "polling"
     },
     {
         "id": "f7359f0c.015da",
@@ -54,26 +63,23 @@
         "name": "Test"
     },
     {
-        "id": "4bed83d0.7927bc",
-        "type": "chatbot-telegram-node",
-        "z": "",
-        "botname": "Test con WebHook",
-        "usernames": "",
-        "providerToken": "",
-        "polling": "1000",
-        "store": "99497719.973138",
-        "log": "",
-        "parseMode": "",
-        "debug": true,
-        "webHook": "https://a95e0193.ngrok.io/redbot/telegram"
-    },
-    {
         "id": "df322afe.643568",
         "type": "chatbot-context-store",
         "z": "",
         "name": "Plain file /web",
         "contextStorage": "plain-file",
         "contextParams": "{\"path\": \"/web/chat-contexts\"}"
+    },
+    {
+        "id": "9702b932.eb4518",
+        "type": "chatbot-universal-node",
+        "z": "",
+        "botname": "Test",
+        "usernames": "",
+        "connectorParams": "",
+        "store": "99497719.973138",
+        "log": "",
+        "debug": false
     },
     {
         "id": "e6958fd9.1420c",
@@ -91,13 +97,14 @@
                 "message": "test version 3"
             }
         ],
-        "answer": false,
+        "answer": true,
         "silent": false,
         "x": 450,
         "y": 180,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "7250c3b5.eb127c",
+                "986ad46f.0ef9f8"
             ]
         ]
     },
@@ -123,9 +130,10 @@
         "z": "a31bc839.23dc38",
         "name": "test file",
         "filename": "/web/cacca.png.zip",
+        "document": "https://www.repstatic.it/content/nazionale/img/2019/09/06/165410060-50f5ab01-8460-4eea-be42-63a85f53969c.jpg",
         "caption": "Test file",
         "x": 460,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "7250c3b5.eb127c"
@@ -196,8 +204,8 @@
         "latitude": "43",
         "longitude": "21",
         "place": "Bologna",
-        "x": 418,
-        "y": 507,
+        "x": 450,
+        "y": 480,
         "wires": [
             [
                 "7250c3b5.eb127c"
@@ -208,11 +216,12 @@
         "id": "180006f6.26e939",
         "type": "chatbot-audio",
         "z": "a31bc839.23dc38",
-        "name": "",
-        "filename": "/web/cacca.mp3",
+        "name": "Bella",
+        "audio": "/web/node-red-contrib-chatbot/__tests__/dummy/audio.mp3",
+        "duration": "23",
         "track": false,
-        "x": 449,
-        "y": 568,
+        "x": 450,
+        "y": 560,
         "wires": [
             [
                 "7250c3b5.eb127c"
@@ -247,8 +256,8 @@
                 "style": "danger"
             }
         ],
-        "x": 450,
-        "y": 640,
+        "x": 470,
+        "y": 680,
         "wires": [
             [
                 "7250c3b5.eb127c"
@@ -283,7 +292,7 @@
                 "style": "danger"
             }
         ],
-        "x": 450,
+        "x": 470,
         "y": 720,
         "wires": [
             [
@@ -319,7 +328,7 @@
                 "style": "danger"
             }
         ],
-        "x": 630,
+        "x": 650,
         "y": 720,
         "wires": [
             []
@@ -330,7 +339,10 @@
         "type": "chatbot-conversation",
         "z": "a31bc839.23dc38",
         "name": "",
+        "botDevelopment": "ece4ecb.f25621",
+        "botProduction": "",
         "chatId": "D870ESPT4",
+        "userId": "",
         "transport": "telegram",
         "store": "",
         "x": 430,
@@ -454,9 +466,7 @@
             [
                 "1a7e3bef.0a6d64"
             ],
-            [
-                "7436f69f.dc68b8"
-            ]
+            []
         ]
     },
     {
@@ -464,8 +474,8 @@
         "type": "chatbot-qrcode",
         "z": "a31bc839.23dc38",
         "message": "Allora barabba????",
-        "x": 447,
-        "y": 811,
+        "x": 460,
+        "y": 760,
         "wires": [
             [
                 "7250c3b5.eb127c"
@@ -480,8 +490,8 @@
         "func": "msg.payload = {\n  sharable: true,\n  aspectRatio: 'horizontal',\n  elements: [\n    {\n      title: 'my title',\n      subtitle: 'I am a sub title',\n      imageUrl: 'https://placeimg.com/640/480/any',\n      buttons: [\n        {\n          type: 'url',\n          url: 'http://javascript-jedi.com',\n          label: 'Javascript Jedi'\n        }\n      ]\n    },\n    {\n      title: 'another title',\n      subtitle: 'Second sub title',\n      imageUrl: 'https://placeimg.com/640/480/any',\n      buttons: [\n        {\n          type: 'url',\n          url: 'http://javascript-jedi.com',\n          label: 'Javascript Jedi'\n        }\n      ]\n    }\n  ]      \n}\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 450,
-        "y": 880,
+        "x": 470,
+        "y": 800,
         "wires": [
             [
                 "3295858a.9b945a"
@@ -500,7 +510,7 @@
         "aspectRatio": "horizontal",
         "buttons": [],
         "x": 670,
-        "y": 880,
+        "y": 800,
         "wires": [
             []
         ]
@@ -523,8 +533,8 @@
                 "alert": false
             }
         ],
-        "x": 460,
-        "y": 960,
+        "x": 480,
+        "y": 840,
         "wires": [
             [
                 "80cb97a6.6af658"
@@ -551,8 +561,8 @@
                 "alert": false
             }
         ],
-        "x": 840,
-        "y": 960,
+        "x": 660,
+        "y": 840,
         "wires": [
             []
         ]
@@ -567,7 +577,8 @@
         "y": 480,
         "wires": [
             [
-                "c9240759.c22908"
+                "986ad46f.0ef9f8",
+                "e6958fd9.1420c"
             ]
         ]
     },
@@ -731,6 +742,238 @@
         "silent": false,
         "x": 650,
         "y": 1280,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "3f78ae88.86efe2",
+        "type": "chatbot-universal-receive",
+        "z": "bc313bf0.98c698",
+        "bot": "9702b932.eb4518",
+        "botProduction": "",
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "dd79592a.0ee158",
+                "e810bc28.1d569"
+            ]
+        ]
+    },
+    {
+        "id": "86180b56.aac988",
+        "type": "chatbot-universal-send",
+        "z": "bc313bf0.98c698",
+        "bot": "9702b932.eb4518",
+        "botProduction": "",
+        "track": false,
+        "passThrough": true,
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "6183f591.9ac0fc",
+                "e10ea1b2.0ed94"
+            ]
+        ]
+    },
+    {
+        "id": "ab3cecfc.c3d1c",
+        "type": "chatbot-extend",
+        "z": "bc313bf0.98c698",
+        "codeJs": "node.chat.onChatId(msg => {\n  console.log('onChatId -> ', msg)\n  return msg.topic !== null ? msg.topic : null;\n});\n\nnode.chat.onMessageId(msg => {\n  return msg._msgid !== null ? msg._msgid : null;\n});\n\nnode.chat.in(message => {\n  return new Promise((resolve, reject) => {\n    // check that the incoming payload is an actual \"text\" message\n    if (message.originalMessage !== null && message.originalMessage.payload.text !== '') {\n      message.payload.type = 'message';\n      message.payload.content = message.originalMessage.text; // msg content\n      message.payload.topic = message.originalMessage.topic; //Phone number\n    } else {\n      node.warn(\"not text message\");\n    }\n    resolve(message);\n  });\n});\n\nnode.chat.out(message => {\n  var chat = message.chat();\n  return new Promise((resolve, reject) => {\n    message.payload = message.payload.content;\n    message.topic = chat.get('chatId');\n    resolve(message);\n  });\n});",
+        "platform": "universal",
+        "noerr": 0,
+        "x": 380,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "dd79592a.0ee158",
+        "type": "chatbot-message",
+        "z": "bc313bf0.98c698",
+        "name": "",
+        "message": [
+            {
+                "message": "Hello wordls"
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 680,
+        "y": 280,
+        "wires": [
+            [
+                "86180b56.aac988"
+            ]
+        ]
+    },
+    {
+        "id": "6183f591.9ac0fc",
+        "type": "function",
+        "z": "bc313bf0.98c698",
+        "name": "",
+        "func": "console.log('finally', msg)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1070,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f188b11.f84c14",
+        "type": "function",
+        "z": "bc313bf0.98c698",
+        "name": "",
+        "func": "msg = {\n  from_toa: '91 international',\n  from_smsc: '+393473561058',\n  sent: 1563563024000,\n  received: 1563563024000,\n  subject: 'GSM1',\n  topic: '+394242424242',\n  payload: 'the message',\n  text: 'the message'\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "3f78ae88.86efe2"
+            ]
+        ]
+    },
+    {
+        "id": "92fe30ff.ea82d",
+        "type": "inject",
+        "z": "bc313bf0.98c698",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "5f188b11.f84c14"
+            ]
+        ]
+    },
+    {
+        "id": "e10ea1b2.0ed94",
+        "type": "debug",
+        "z": "bc313bf0.98c698",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1050,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e810bc28.1d569",
+        "type": "debug",
+        "z": "bc313bf0.98c698",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 690,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "78812b50.15f964",
+        "type": "chatbot-video",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "filename": "/web/test-video.mp4",
+        "video": "/web/node-red-contrib-chatbot/__tests__/dummy/audio.mp3",
+        "caption": "Test video",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "e4c1a93a.7f7e78",
+        "type": "chatbot-voice",
+        "z": "a31bc839.23dc38",
+        "name": "Bella secco",
+        "message": "Ehi, bella secco!",
+        "language": "it-it",
+        "x": 470,
+        "y": 520,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "4f0506b4.6e8e08",
+        "type": "chatbot-image",
+        "z": "a31bc839.23dc38",
+        "name": "Image URL",
+        "filename": "",
+        "image": "https://i.giphy.com/media/duzpaTbCUy9Vu/200w_d.gif",
+        "caption": "",
+        "x": 470,
+        "y": 880,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "7749b57b.d6d50c",
+        "type": "chatbot-sticker",
+        "z": "a31bc839.23dc38",
+        "sticker": "https://i.giphy.com/media/duzpaTbCUy9Vu/200w_d.gif",
+        "x": 460,
+        "y": 920,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "89c4bf43.1dc16",
+        "type": "chatbot-video",
+        "z": "a31bc839.23dc38",
+        "name": "Vide w/ GIF",
+        "filename": "/web/test-video.mp4",
+        "video": "https://i.giphy.com/media/duzpaTbCUy9Vu/200w_d.gif",
+        "caption": "Test video",
+        "x": 470,
+        "y": 360,
+        "wires": [
+            [
+                "7250c3b5.eb127c"
+            ]
+        ]
+    },
+    {
+        "id": "ceb5d355.b254f",
+        "type": "chatbot-animation",
+        "z": "a31bc839.23dc38",
+        "animation": "https://i.giphy.com/media/duzpaTbCUy9Vu/200w_d.gif",
+        "x": 460,
+        "y": 600,
         "wires": [
             [
                 "7250c3b5.eb127c"
