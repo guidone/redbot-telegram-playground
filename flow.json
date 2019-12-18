@@ -103,7 +103,6 @@
         "y": 180,
         "wires": [
             [
-                "7250c3b5.eb127c",
                 "986ad46f.0ef9f8"
             ]
         ]
@@ -120,7 +119,7 @@
         "y": 280,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -136,7 +135,7 @@
         "y": 400,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -192,7 +191,7 @@
         "y": 440,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -208,7 +207,7 @@
         "y": 480,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -224,7 +223,7 @@
         "y": 560,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -260,7 +259,7 @@
         "y": 680,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -368,7 +367,7 @@
         "y": 1160,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -441,7 +440,7 @@
         "y": 120,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -478,7 +477,7 @@
         "y": 760,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -578,7 +577,7 @@
         "wires": [
             [
                 "986ad46f.0ef9f8",
-                "e6958fd9.1420c"
+                "df43628.c1c3ca"
             ]
         ]
     },
@@ -591,8 +590,8 @@
         "track": false,
         "passThrough": false,
         "outputs": 0,
-        "x": 1150,
-        "y": 180,
+        "x": 1250,
+        "y": 300,
         "wires": []
     },
     {
@@ -643,7 +642,7 @@
         "y": 220,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "dca99c3d.44fcb"
             ]
         ]
     },
@@ -724,7 +723,7 @@
         "y": 1240,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -744,7 +743,7 @@
         "y": 1280,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -903,7 +902,7 @@
         "y": 320,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -918,7 +917,7 @@
         "y": 520,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -934,7 +933,7 @@
         "y": 880,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -947,7 +946,7 @@
         "y": 920,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -963,7 +962,7 @@
         "y": 360,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
             ]
         ]
     },
@@ -976,7 +975,57 @@
         "y": 600,
         "wires": [
             [
-                "7250c3b5.eb127c"
+                "d10010f9.35acc"
+            ]
+        ]
+    },
+    {
+        "id": "a9c61ff6.f985d",
+        "type": "mc-output",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "topic": "message.sent",
+        "payload": "",
+        "x": 1280,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d10010f9.35acc",
+        "type": "function",
+        "z": "a31bc839.23dc38",
+        "name": "Hub",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1030,
+        "y": 260,
+        "wires": [
+            [
+                "7250c3b5.eb127c",
+                "a9c61ff6.f985d"
+            ]
+        ]
+    },
+    {
+        "id": "dca99c3d.44fcb",
+        "type": "chatbot-message",
+        "z": "a31bc839.23dc38",
+        "name": "Third",
+        "message": [
+            {
+                "message": "A very long version of the message. A very long version of the message. A very long version of the message. A very long version of the message. A very long version of the message. A very long version of the message."
+            }
+        ],
+        "answer": false,
+        "silent": false,
+        "x": 750,
+        "y": 220,
+        "wires": [
+            [
+                "d10010f9.35acc"
             ]
         ]
     }
