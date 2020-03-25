@@ -51,7 +51,6 @@
         "polling": "1000",
         "store": "99497719.973138",
         "log": "",
-        "parseMode": "",
         "debug": false,
         "webHook": "",
         "connectMode": "polling"
@@ -82,6 +81,20 @@
         "debug": false
     },
     {
+        "id": "bd0fc204.bac7f",
+        "type": "chatbot-telegram-node",
+        "z": "",
+        "botname": "Guidone Test WebHook",
+        "usernames": "",
+        "providerToken": "",
+        "polling": "1000",
+        "store": "df322afe.643568",
+        "log": "",
+        "debug": false,
+        "webHook": "https://80a3d287.ngrok.io/redbot/telegram",
+        "connectMode": "webHook"
+    },
+    {
         "id": "e6958fd9.1420c",
         "type": "chatbot-message",
         "z": "a31bc839.23dc38",
@@ -97,8 +110,6 @@
                 "message": "test version 3"
             }
         ],
-        "answer": true,
-        "silent": false,
         "x": 450,
         "y": 180,
         "wires": [
@@ -186,7 +197,7 @@
                 "style": ""
             }
         ],
-        "message": "",
+        "message": "I am a message",
         "x": 460,
         "y": 440,
         "wires": [
@@ -362,7 +373,6 @@
                 "message": "I am a conversation"
             }
         ],
-        "answer": false,
         "x": 570,
         "y": 1160,
         "wires": [
@@ -456,15 +466,20 @@
             },
             {
                 "type": "catchAll"
+            },
+            {
+                "type": "isLanguage",
+                "language": "cs"
             }
         ],
-        "outputs": 2,
+        "outputs": 3,
         "x": 170,
         "y": 360,
         "wires": [
             [
                 "1a7e3bef.0a6d64"
             ],
+            [],
             []
         ]
     },
@@ -576,8 +591,7 @@
         "y": 480,
         "wires": [
             [
-                "986ad46f.0ef9f8",
-                "df43628.c1c3ca"
+                "986ad46f.0ef9f8"
             ]
         ]
     },
@@ -610,8 +624,6 @@
                 "message": "test version 3"
             }
         ],
-        "answer": false,
-        "silent": false,
         "x": 450,
         "y": 220,
         "wires": [
@@ -636,8 +648,6 @@
                 "message": "test 5"
             }
         ],
-        "answer": false,
-        "silent": false,
         "x": 600,
         "y": 220,
         "wires": [
@@ -717,8 +727,6 @@
         "z": "a31bc839.23dc38",
         "name": "",
         "message": [],
-        "answer": false,
-        "silent": false,
         "x": 610,
         "y": 1240,
         "wires": [
@@ -737,8 +745,6 @@
                 "message": "Didn't understand"
             }
         ],
-        "answer": false,
-        "silent": false,
         "x": 650,
         "y": 1280,
         "wires": [
@@ -800,8 +806,6 @@
                 "message": "Hello wordls"
             }
         ],
-        "answer": false,
-        "silent": false,
         "x": 680,
         "y": 280,
         "wires": [
@@ -980,19 +984,6 @@
         ]
     },
     {
-        "id": "a9c61ff6.f985d",
-        "type": "mc-output",
-        "z": "a31bc839.23dc38",
-        "name": "",
-        "topic": "message.sent",
-        "payload": "",
-        "x": 1280,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "d10010f9.35acc",
         "type": "function",
         "z": "a31bc839.23dc38",
@@ -1004,8 +995,7 @@
         "y": 260,
         "wires": [
             [
-                "7250c3b5.eb127c",
-                "a9c61ff6.f985d"
+                "7250c3b5.eb127c"
             ]
         ]
     },
@@ -1019,13 +1009,148 @@
                 "message": "A very long version of the message. A very long version of the message. A very long version of the message. A very long version of the message. A very long version of the message. A very long version of the message."
             }
         ],
-        "answer": false,
-        "silent": false,
         "x": 750,
         "y": 220,
         "wires": [
             [
                 "d10010f9.35acc"
+            ]
+        ]
+    },
+    {
+        "id": "38cb1369.a4a56c",
+        "type": "chatbot-quick-replies",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "message": "",
+        "buttons": [
+            {
+                "type": "quick-reply",
+                "label": "One",
+                "value": "1",
+                "url": ""
+            },
+            {
+                "type": "quick-reply",
+                "label": "Two",
+                "value": "2",
+                "url": ""
+            }
+        ],
+        "x": 480,
+        "y": 960,
+        "wires": [
+            [
+                "d10010f9.35acc"
+            ]
+        ]
+    },
+    {
+        "id": "5bc4239b.e1b0fc",
+        "type": "chatbot-context",
+        "z": "a31bc839.23dc38",
+        "command": "intent",
+        "fieldValue": "",
+        "fieldType": "str",
+        "fieldName": "",
+        "x": 440,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "12018e17.43fa02",
+        "type": "chatbot-nlpjs",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "x": 510,
+        "y": 640,
+        "wires": [
+            [
+                "d10010f9.35acc"
+            ]
+        ]
+    },
+    {
+        "id": "51aac918.b2cba8",
+        "type": "inject",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "env",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 150,
+        "y": 1400,
+        "wires": [
+            [
+                "72cd3844.0c3a88"
+            ]
+        ]
+    },
+    {
+        "id": "72cd3844.0c3a88",
+        "type": "chatbot-nlpjs-intent",
+        "z": "a31bc839.23dc38",
+        "intent": "switch.on.light",
+        "language": "en",
+        "utterances": [
+            "switch on lights",
+            "turn on lights",
+            "turn lights on",
+            "i want more light",
+            "power on lights",
+            "power on"
+        ],
+        "outputs": 1,
+        "x": 350,
+        "y": 1400,
+        "wires": [
+            [
+                "93288ad6.d9b358"
+            ]
+        ]
+    },
+    {
+        "id": "93288ad6.d9b358",
+        "type": "chatbot-nlpjs-train",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "x": 600,
+        "y": 1400,
+        "wires": [
+            [
+                "3a03f415.681f8c"
+            ]
+        ]
+    },
+    {
+        "id": "3a03f415.681f8c",
+        "type": "function",
+        "z": "a31bc839.23dc38",
+        "name": "",
+        "func": "console.log('Training complete')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d3b5fb.2ce43a",
+        "type": "chatbot-language",
+        "z": "a31bc839.23dc38",
+        "x": 460,
+        "y": 1000,
+        "wires": [
+            [
+                "986ad46f.0ef9f8"
             ]
         ]
     }
