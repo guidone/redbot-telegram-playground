@@ -1,7 +1,9 @@
-TelegramPlayground
-==================
+Telegram Playground
+===============
 
-### About
+Generic Facebook playground for [RedBot](https://github.com/guidone/node-red-contrib-chatbot). It's a generic bot used for testing.
 
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
+To install create a new project in **Node-RED** and clone the repository:
+
+![Clone repository](https://raw.githubusercontent.com/guidone/redbot-alexa-sandbox/master/clone-sandbox.png)
+
